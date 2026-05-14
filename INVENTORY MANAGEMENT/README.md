@@ -62,7 +62,7 @@ INVENTORY MANAGEMENT/
 
 1. **Clone the repository:**
    ```bash
-   git clone <your-github-repo-url>
+   git clone https://github.com/tanishavermaaa/inventory-management.git
    cd INVENTORY-MANAGEMENT
    ```
 
