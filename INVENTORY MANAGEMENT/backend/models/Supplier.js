@@ -27,9 +27,9 @@ const supplierSchema = new mongoose.Schema(
 );
 
 // Filter out soft-deleted suppliers in queries
-supplierSchema.pre(/^find/, function (next) {
-  this.where({ isDeleted: false });
-  next();
-});
+// supplierSchema.pre(/^find/, function (next) {
+//   this.where({ isDeleted: false });
+//   next();
+// });
 
 module.exports = mongoose.model('Supplier', supplierSchema);

@@ -2,10 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import api from '../services/api';
 import Sidebar from '../components/Sidebar';
-import useAuth from '../hooks/useAuth';
 
 const UsersPage = () => {
-  const { user: currentUser } = useAuth();
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);

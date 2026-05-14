@@ -55,9 +55,9 @@ const productSchema = new mongoose.Schema(
 );
 
 // Filter out soft-deleted products in queries
-productSchema.pre(/^find/, function (next) {
-  this.where({ isDeleted: false });
-  next();
-});
+// productSchema.pre(/^find/, function (next) {
+//   this.where({ isDeleted: false });
+//   next();
+// });
 
 module.exports = mongoose.model('Product', productSchema);

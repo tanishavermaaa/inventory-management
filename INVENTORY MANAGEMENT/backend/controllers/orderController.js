@@ -6,7 +6,7 @@ exports.getAllOrders = async (req, res) => {
   try {
     const { status, search } = req.query;
 
-    let filter = {};
+    let filter = { isDeleted: false };
     if (status) filter.status = status;
     if (search) filter.customerName = { $regex: search, $options: 'i' };
 

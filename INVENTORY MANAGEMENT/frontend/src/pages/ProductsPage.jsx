@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { toast } from 'react-toastify';
 import api from '../services/api';
 import Sidebar from '../components/Sidebar';
@@ -24,11 +24,7 @@ const ProductsPage = () => {
     lowStockThreshold: 10,
   });
 
-  useEffect(() => {
-    fetchData();
-  }, [searchTerm]);
-
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     try {
       setLoading(true);
       const [productsRes, categoriesRes, suppliersRes] = await Promise.all([
@@ -44,7 +40,11 @@ const ProductsPage = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [searchTerm]);
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

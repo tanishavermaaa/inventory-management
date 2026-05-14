@@ -42,9 +42,9 @@ const orderSchema = new mongoose.Schema(
 );
 
 // Filter out soft-deleted orders in queries
-orderSchema.pre(/^find/, function (next) {
-  this.where({ isDeleted: false });
-  next();
-});
+// orderSchema.pre(/^find/, function (next) {
+//   this.where({ isDeleted: false });
+//   next();
+// });
 
 module.exports = mongoose.model('Order', orderSchema);

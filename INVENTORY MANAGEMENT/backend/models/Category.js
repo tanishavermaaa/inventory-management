@@ -21,9 +21,9 @@ const categorySchema = new mongoose.Schema(
 );
 
 // Filter out soft-deleted categories in queries
-categorySchema.pre(/^find/, function (next) {
-  this.where({ isDeleted: false });
-  next();
-});
+// categorySchema.pre(/^find/, function (next) {
+//   this.where({ isDeleted: false });
+//   next();
+// });
 
 module.exports = mongoose.model('Category', categorySchema);
